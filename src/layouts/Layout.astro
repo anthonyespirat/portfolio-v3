@@ -1,4 +1,7 @@
 ---
+import Header from "../components/Header.astro";
+import "@fontsource/poppins";
+
 export interface Props {
   title: string;
 }
@@ -15,11 +18,15 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body>
+  <body class='min-h-screen'>
+    <Header />
     <slot />
   </body>
 </html>
 <style is:global>
-	
+
+	body {
+		@apply text-white bg-dark lg:container mx-auto
+	}
 </style>
 

@@ -5,6 +5,9 @@ module.exports = {
   purge: [],
   purge: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}", "./public/index.html"],
   theme: {
+    fontFamily: {
+      "sans": ["Poppins", "Arial", "Helvetica", "sans-serif"]
+    },
     colors: {
       transparent: "transparent",
       current: "currentColor",
@@ -14,7 +17,8 @@ module.exports = {
       indigo: colors.indigo,
       red: colors.rose,
       yellow: colors.amber,
-      "primary" : "#5688C7"
+      "primary" : "#5688C7",
+      "dark" : "#1B2125"
     },
     fontSize: {
       "xs": ".75rem",
