@@ -10,7 +10,7 @@ export default function Menu ({ currentUrl }: { currentUrl: string }) {
   return (
     <>
       <nav className="flex-1 px-5 w-full">
-        <ul className="list flex gap-16 justify-center">
+        <ul className="list hidden sm:flex sm:gap-2  md:gap-12 justify-center">
           <li className={`${resolveActive("/")}`}><a href="/">Accueil</a></li>
           <span>&bull;</span>
           <li className={`${resolveActive("/about")}`}><a href='#about'>À propos</a></li>
