@@ -1,9 +1,10 @@
+// eslint-disable-next-line no-undef
 module.exports = {
   env: {
     browser: true,
     es2021: true
   },
-  extends: ["plugin:astro/recommended"],
+  extends: ["plugin:astro/recommended", "eslint:recommended"],
   overrides: [
     {
       // Define the configuration for `.astro` file.

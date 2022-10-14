@@ -1,11 +1,7 @@
-import { useState, useEffect, useMemo, useCallback } from "react";
+import { useCallback } from "react";
 
 export default function Menu ({ currentUrl }: { currentUrl: string }) {
 
-  const active = useMemo(() => {
-    return currentUrl;
-  }, [currentUrl]) ;
-  
   const resolveActive = useCallback((path: string) => {
     if (path !== currentUrl) return "text-gray-300";
     return "text-white";
