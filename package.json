@@ -18,9 +18,13 @@
     "tailwindcss": "^3.1.8"
   },
   "devDependencies": {
+    "@astrojs/react": "^1.2.0",
+    "@types/react": "^18.0.21",
     "@typescript-eslint/eslint-plugin": "^5.40.0",
     "@typescript-eslint/parser": "^5.40.0",
     "eslint": "^8.25.0",
-    "eslint-plugin-astro": "^0.20.0"
+    "eslint-plugin-astro": "^0.20.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }

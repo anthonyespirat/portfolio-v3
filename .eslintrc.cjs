@@ -17,6 +17,7 @@ module.exports = {
         extraFileExtensions: [".astro"],
       },
       rules: {
+        "quotes": ["error", "double"],
         // override/add rules settings here, such as:
         // "astro/no-set-html-directive": "error"
       },

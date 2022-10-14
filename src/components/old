@@ -1,0 +1,18 @@
+---
+const url = new URL(Astro.request.url);
+console.log(url.pathname);
+---
+
+<nav class="flex-1 px-5 w-full">
+  <ul class="list flex gap-16 justify-center">
+    <li>Accueil</li>
+    <span>&bull;</span>
+    <li>À propos</li>
+    <span>&bull;</span>
+    <li>Mes créations</li>
+  </ul>
+</nav>
+
+<style>
+
+</style>
