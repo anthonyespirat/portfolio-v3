@@ -1,16 +1,28 @@
 ---
 const { text, link } = Astro.props;
 ---
-<a class="link cursor-pointer py-2 px-8 rounded border border-gray-400 hover:bg-gray-400 hover:bg-opacity-30 transition duration-100 font-semibold flex-none" href={link}>
+
+<a
+  class="link cursor-pointer py-2 px-8 rounded border border-gray-400 hover:bg-gray-400 hover:bg-opacity-30 transition duration-100 font-semibold flex-none"
+  href={link}
+>
   {text}
 </a>
 
 <style>
   .link {
-    background-image: linear-gradient(262.85deg, rgba(191, 210, 234, 0.051) 0%, rgba(248, 248, 248, 0.01) 100%);
-    transition:2s linear;
+    background-image: linear-gradient(
+      262.85deg,
+      rgba(191, 210, 234, 0.051) 0%,
+      rgba(248, 248, 248, 0.01) 100%
+    );
+    transition: 2s linear;
   }
   .link:hover {
-    background-image: linear-gradient(262.85deg, rgba(191, 210, 234, 0.1) 0%, rgba(248, 248, 248, 0.1) 100%);
+    background-image: linear-gradient(
+      262.85deg,
+      rgba(191, 210, 234, 0.1) 0%,
+      rgba(248, 248, 248, 0.1) 100%
+    );
   }
 </style>

@@ -4,15 +4,12 @@ import Logo from "./Logo.astro";
 import Menu from "./Menu";
 
 const url = new URL(Astro.request.url);
-
 ---
 
-<header class='flex items-center h-[10vh] w-full'>
+<header class="flex items-center h-[10vh] w-full">
   <Logo />
   <Menu currentUrl={url.pathname} client:visible />
   <Button text="Contact" />
 </header>
-  
-<style>
 
-</style>
+<style></style>

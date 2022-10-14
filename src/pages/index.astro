@@ -1,10 +1,26 @@
 ---
-import Hero from "../components/Hero.astro";
-import Layout from "../layouts/Layout.astro";
+import About from "@components/About.astro";
+import Hero from "@components/Hero.astro";
+import Mouse from "@components/Mouse.astro";
+import Layout from "@layouts/Layout.astro";
+import Creations from "@components/Creations";
+
+export type PostFrontmatter = {
+  title: string,
+  author: string,
+  miniature: string
+};
+
+const posts = await Astro.glob<PostFrontmatter>("../creations/*.md");
 ---
 
 <Layout title="Anthony Espirat - Dev fullstack js">
   <Hero />
+  <Mouse />
+  <div class="flex flex-col gap-24 mt-24">
+    <About />
+    <Creations posts={posts} />
+  </div>
 </Layout>
 
 <style>
