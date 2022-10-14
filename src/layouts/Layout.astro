@@ -30,8 +30,31 @@ const { title } = Astro.props;
 
 <style is:global>
 
+  html {
+      scrollbar-color: rgba(31, 82, 223, 0.3) transparent;
+      scrollbar-width: thin
+    }
+
 	#wrapper {
-		@apply text-white bg-dark lg:container px-4 mx-auto
+		@apply text-white lg:container px-4 mx-auto
 	}
+
+  body {
+    @apply bg-dark relative
+  }
+
+  body::-webkit-scrollbar {
+   width: 5px;
+   height: 100%;
+   background: transparent;
+   border-radius: 5px;
+   position: fixed
+}
+
+body::-webkit-scrollbar-thumb {
+   background: hsla(0, 0%, 100%, .3);
+   border-radius: 5px
+}
+
 </style>
 

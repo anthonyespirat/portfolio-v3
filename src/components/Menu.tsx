@@ -6,8 +6,6 @@ export default function Menu ({ currentUrl }: { currentUrl: string }) {
     if (path !== currentUrl) return "text-gray-300";
     return "text-white";
   }, [currentUrl]);
-
-  console.log(currentUrl);
   
   return (
     <>
