@@ -1,0 +1,34 @@
+---
+import { PostFrontmatter } from "@pages/index.astro";
+import { MarkdownInstance } from "astro";
+
+const { id, post }: { id: string, post: MarkdownInstance<PostFrontmatter> } = Astro.props;
+---
+
+<div id='trigger' class="w-full" onclick={`window.${id}.showModal()`}><slot name='element' /></div>
+<dialog id={`${id}`} class='bg-dark rounded transition backdrop:bg-gray-900 backdrop:opacity-80' onclick={`window.${id}.close()`}>
+  <form method="dialog" class="flex flex-col items-center w-full">
+    <img src={post.frontmatter.miniature} class="rounded max-h-[700px]"/>
+    <article class="py-2 mt-2 w-full">
+      <!-- TITLE -->
+      <h2 class="font-medium text-lg text-center">{post.frontmatter.title}</h2>
+      <!-- STACK -->
+      <div class="flex gap-x-2 justify-center my-4 font-light text-center">
+        {post.frontmatter.stack.join(" - ")}
+      </div>
+      <!-- CONTENT -->
+      <div class="art" set:html={post.compiledContent()} />
+    </article>
+  </form>
+</dialog>
+
+<style>
+dialog {
+  color: white;
+}
+h1 {
+  @apply font-bold
+}
+
+</style>
+

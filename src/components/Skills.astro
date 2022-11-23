@@ -1,0 +1,104 @@
+---
+
+---
+<section id='skill' class='flex flex-col lg:flex-row items-center lg:text-left mb-12'>
+
+  <div class='lg:w-6/12 skill-text mb-12 lg:mb-0'>
+    <h2 class="text-4xl mb-2 font-medium">
+      <span class="text-primary">M</span>es compétences et ma passion web
+    </h2>
+    <p class='lg:w-4/5 pt-10 text-gray-400 text-xl leading-9'>Soif d’apprendre de nouvelles choses, j’adore produire et participer à divers projet.</p>
+  </div>
+
+  <div class="bg-blue grid grid-cols-2 lg:grid-cols-6 gap-5 auto-rows-min content-center lg:w-5/12 lg:ml-12">
+    <div class="box lg:col-span-2">
+      <div class="icon">
+        <img src="/images/Figma.svg" alt="Vect1" />
+      </div>
+      <div class="software">Figma</div>
+    </div>
+    <div class="box lg:col-span-2">
+      <div class="icon">
+        <img src="/images/React.svg" alt="React" />
+      </div>
+      <div class="software">React</div>
+    </div>
+    <div class="box lg:col-span-2">
+      <div class="icon">
+        <img src="/images/html.svg" alt="Vect1" />
+      </div>
+      <div class="software">HTML / CSS</div>
+    </div>
+    <div class="box lg:col-span-3">
+      <div class="icon">
+        <img src="/images/Photoshop.svg" alt="Vect1" />
+      </div>
+      <div class="software">Photoshop</div>
+    </div>
+    <div class="box col-span-2 lg:col-span-3">
+      <div class="icon">
+        <img src="/images/Javascript.svg" alt="Vect1" />
+      </div>
+      <div class="software">Javascript</div>
+    </div>
+  </div>            
+</section>
+
+<style>
+.box {
+    background: linear-gradient(260.81deg, rgba(86, 136, 199, 0.3) -27.83%, rgba(222, 230, 240, 0.15) 176.02%, rgba(85, 136, 201, 0.06) 176.02%);
+    border: 1px solid rgba(224, 224, 224, 0.2);
+    height: min-content;
+    
+    @apply rounded px-1 py-3 flex justify-center; 
+}
+.box > *{
+    z-index: 8;
+    @apply px-2 flex items-center;
+}
+#skill {
+    position: relative;
+}
+.bg-blue:after {
+    content: '';
+    content: url('../assets/images/radial-min.png');
+    display: block;
+    position: absolute;
+    top: -400px;
+    right: -700px;
+    opacity: 1;
+    min-height: 100%;
+    z-index: -1;
+}
+
+#skill:after {
+    content:'';
+    position: absolute;
+    right: -480px;
+    bottom: -260px;
+    z-index: -1;
+    display: block;
+    min-height: 750px;
+    width: 900px;
+    border-radius: 100%;
+    border: 1px solid rgba(86, 136, 199, 0.4);
+    transform: rotate(45deg);
+}
+#skill:before {
+    content:'';
+    position: absolute;
+    right: -480px;
+    bottom: -200px;
+    z-index: -1;
+    display: block;
+    min-height: 750px;
+    width: 900px;
+    border-radius: 100%;
+    border: 1px solid rgba(86, 136, 199, 0.4);
+    transform: rotate(45deg);
+}
+
+.skill-text > * {
+    @apply text-center lg:text-left;
+}
+</style>

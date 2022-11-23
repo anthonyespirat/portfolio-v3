@@ -1,0 +1,19 @@
+---
+import { PostFrontmatter } from "@pages/index.astro";
+import Creation from "./Creation.astro";
+
+const posts = await Astro.glob<PostFrontmatter>("../../creations/*.md");
+---
+<div id="creations">
+  <div class="text-center">
+    <h2 class="text-4xl mb-2 font-medium">
+      <span class="text-primary">M</span>es créations
+    </h2>
+    <p class="text-gray-400 font-medium">Découvrez mes plus récentes créations</p>
+  </div>
+  <section class="grid grid-cols-1 sm:grid-cols-3 lg:gap-x-24 md:gap-x-12 gap-x-6 gap-y-8 pb-12 pt-20">
+    {posts.map((post) => (
+      <Creation post={post} />
+    ))}
+  </section>
+</div>

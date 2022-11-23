@@ -1,0 +1,13 @@
+---
+import Modal from "@components/Modal.astro";
+import { PostFrontmatter } from "@pages/index.astro";
+import { MarkdownInstance } from "astro";
+
+const { post }: { post: MarkdownInstance<PostFrontmatter> } = Astro.props;
+const { id } = post.frontmatter;
+---
+<div class="flex rounded overflow-hidden max-h-[300px] w-full">
+  <Modal id={id} post={post}>
+    <img slot="element" src={post.frontmatter.miniature} alt='' class="block w-full object-cover object-top hover:scale-105 transition-all cursor-pointer h-full">
+  </Modal>
+</div>
