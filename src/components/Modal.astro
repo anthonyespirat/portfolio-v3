@@ -8,12 +8,12 @@ const { id, post }: { id: string, post: MarkdownInstance<PostFrontmatter> } = As
 <div id='trigger' class="w-full" onclick={`window.${id}.showModal()`}><slot name='element' /></div>
 <dialog id={`${id}`} class='bg-dark rounded transition backdrop:bg-gray-900 backdrop:opacity-80' onclick={`window.${id}.close()`}>
   <form method="dialog" class="flex flex-col items-center w-full">
-    <img src={post.frontmatter.miniature} class="rounded max-h-[700px]"/>
-    <article class="py-2 mt-2 w-full">
+    <img src={post.frontmatter.miniature} class="rounded max-h-[500px] md:max-h-[700px]"/>
+    <article class="py-2 mt-4 w-full tracking-wide text-center">
       <!-- TITLE -->
-      <h2 class="font-medium text-lg text-center">{post.frontmatter.title}</h2>
+      <h2 class="font-medium text-lg">{post.frontmatter.title}</h2>
       <!-- STACK -->
-      <div class="flex gap-x-2 justify-center my-4 font-light text-center">
+      <div class="flex gap-x-2 justify-center my-4 font-light">
         {post.frontmatter.stack.join(" - ")}
       </div>
       <!-- CONTENT -->
@@ -29,6 +29,8 @@ dialog {
 h1 {
   @apply font-bold
 }
-
+.art {
+  @apply text-center leading-7 font-normal
+}
 </style>
 
