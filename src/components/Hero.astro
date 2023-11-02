@@ -19,11 +19,11 @@
   #hero:after {
     content: "";
     position: absolute;
-    right: -200px;
-    bottom: -20%;
+    right: -35vw;
+    bottom: 0%;
     display: block;
-    min-height: 750px;
-    width: 900px;
+    min-height: 850px;
+      width: 1150px;
     border-radius: 100%;
     border: 1px solid rgba(86, 136, 199, 0.4);
     transform: rotate(30deg);
@@ -33,14 +33,14 @@
     z-index: -2;
     content: "";
     position: absolute;
-    right: -200px;
-    bottom: -15%;
+    right: -35vw;
+    bottom: 0%;
     display: block;
-    min-height: 750px;
-    width: 900px;
+    min-height: 850px;
+    width: 1150px;
     border-radius: 100%;
     border: 1px solid rgba(86, 136, 199, 0.4);
-    transform: rotate(45deg);
+    transform: rotate(50deg);
   }
 
   #hero h1:after {
@@ -54,5 +54,51 @@
     opacity: 1;
     min-height: 100%;
     z-index: -1;
+  }
+
+  @media screen and (max-width: 1535px) {
+    #hero:after {
+    right: -30vw;
+    bottom: -5%;
+    min-height: 850px;
+    width: 1150px;
+  }
+    #hero:before {
+      right: -30vw;
+      bottom: -2%;
+      min-height: 850px;
+      width: 1150px;
+    }
+  }
+
+
+  @media screen and (max-width: 1280px) {
+    #hero:after {
+    right: -300px;
+    bottom: -5%;
+    min-height: 800px;
+    width: 1050px;
+  }
+    #hero:before {
+      right: -350px;
+      bottom: 0%;
+      min-height: 800px;
+      width: 1050px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    #hero:after {
+    right: -300px;
+    bottom: -15%;
+    min-height: 550px;
+    width: 900px;
+  }
+    #hero:before {
+      right: -350px;
+      bottom: -10%;
+      min-height: 550px;
+      width: 900px;
+    }
   }
 </style>
