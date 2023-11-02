@@ -1,5 +1,9 @@
 ---
 ---
+<script>
+  const r = document.querySelector<HTMLElement>(':root');
+  // r.style.setProperty('--cirlce-width', '1950px');
+</script>
 
 <section
   id="hero"
@@ -13,17 +17,48 @@
 </section>
 
 <style>
+  :root {
+    --cirlce-width: 1150px;
+    --circle-after-bottom: 0%;
+    --circle-before-bottom: 0%;
+    --cirlce-min-height: 850px;
+    --circle-after-right: -35vw;
+    --circle-before-right: -35vw;
+
+    @media screen and (max-width: 1535px) {
+      --circle-after-right: -30vw;
+      --circle-before-right: -30vw;
+    }
+
+    @media screen and (max-width: 1280px) {
+      --cirlce-width: 1050px;
+      --circle-after-bottom: -5%;
+      --circle-before-bottom: -2%;
+      --cirlce-min-height: 800px;
+      --circle-after-right: -300px;
+      --circle-before-right: -350px;
+    }
+
+    @media screen and (max-width: 768px) {
+      --cirlce-width: 900px;
+      --circle-after-bottom: -15%;
+      --circle-before-bottom: -10%;
+      --cirlce-min-height: 550px;
+      --circle-after-right: -300px;
+      --circle-before-right: -350px;
+    }
+  }
   #hero {
     position: relative;
   }
   #hero:after {
     content: "";
     position: absolute;
-    right: -35vw;
-    bottom: 0%;
+    right: var(--circle-after-right);
+    bottom: var(--circle-after-bottom);
     display: block;
-    min-height: 850px;
-      width: 1150px;
+    min-height: var(--cirlce-min-height);
+    width: var(--cirlce-width);
     border-radius: 100%;
     border: 1px solid rgba(86, 136, 199, 0.4);
     transform: rotate(30deg);
@@ -33,11 +68,11 @@
     z-index: -2;
     content: "";
     position: absolute;
-    right: -35vw;
-    bottom: 0%;
+    right: var(--circle-before-right);
+    bottom: var(--circle-before-bottom);
     display: block;
-    min-height: 850px;
-    width: 1150px;
+    min-height: var(--cirlce-min-height);
+    width: var(--cirlce-width);
     border-radius: 100%;
     border: 1px solid rgba(86, 136, 199, 0.4);
     transform: rotate(50deg);
@@ -54,51 +89,5 @@
     opacity: 1;
     min-height: 100%;
     z-index: -1;
-  }
-
-  @media screen and (max-width: 1535px) {
-    #hero:after {
-    right: -30vw;
-    bottom: -5%;
-    min-height: 850px;
-    width: 1150px;
-  }
-    #hero:before {
-      right: -30vw;
-      bottom: -2%;
-      min-height: 850px;
-      width: 1150px;
-    }
-  }
-
-
-  @media screen and (max-width: 1280px) {
-    #hero:after {
-    right: -300px;
-    bottom: -5%;
-    min-height: 800px;
-    width: 1050px;
-  }
-    #hero:before {
-      right: -350px;
-      bottom: 0%;
-      min-height: 800px;
-      width: 1050px;
-    }
-  }
-
-  @media screen and (max-width: 768px) {
-    #hero:after {
-    right: -300px;
-    bottom: -15%;
-    min-height: 550px;
-    width: 900px;
-  }
-    #hero:before {
-      right: -350px;
-      bottom: -10%;
-      min-height: 550px;
-      width: 900px;
-    }
   }
 </style>
