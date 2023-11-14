@@ -1,8 +1,5 @@
 ---
 import Header from "@components/Header.astro";
-import "@fontsource/poppins/400.css";
-import "@fontsource/poppins/300.css";
-import "@fontsource/poppins/500.css";
 export interface Props {
   title: string;
 }
@@ -18,6 +15,9 @@ const { title } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="image_src" href="/preview.jpg">
     <meta name="generator" content={Astro.generator} />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
     <title>{title}</title>
   </head>
   <body class="bg-dark">
@@ -26,13 +26,12 @@ const { title } = Astro.props;
       <slot />
     </div>
     <script>
-      const modal = document.getElementById("modal") as HTMLDialogElement;
-      const trigger = document.getElementById("trigger");
-      trigger.addEventListener("click", () => {
-        modal.showModal();
-      });
-      modal.addEventListener("click", () => {
-        modal.close();
+      document.addEventListener("DOMContentLoaded", () => {
+        const modal = document.getElementById("modal") as HTMLDialogElement;
+        const trigger = document.getElementById("trigger");
+        trigger.addEventListener("click", () => {
+          modal.showModal();
+        });
       });
     </script>
   </body>
