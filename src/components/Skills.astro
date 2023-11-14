@@ -1,21 +1,26 @@
 ---
 
 ---
+<script>
+  const js = document.querySelector<HTMLDivElement>(".js")
+
+
+  // on resize window change js text to "JS"
+  window.addEventListener("resize", () => {
+    js.innerText = window.innerWidth < 500 ? "JS" : "Javascript"
+  })
+
+</script>
+
 <section id='skill' class='flex flex-col lg:flex-row items-center lg:text-left mb-12'>
-    <div class='lg:w-6/12 skill-text mb-12 lg:mb-0'>
-      <h2 class="text-4xl mb-2 font-medium">
+    <div class='lg:w-6/12 skill-text mb-12 lg:mb-0 flex-col flex gap-2'>
+      <h2 class="text-4xl font-medium">
         <span class="text-primary">M</span>es compétences et ma passion web
       </h2>
-      <p class='lg:w-4/5 pt-10 text-gray-400 text-xl leading-9'>Soif d’apprendre de nouvelles choses, j’adore produire et participer à divers projet.</p>
+      <p class='lg:w-4/5 text-gray-400 text-xl leading-9'>Soif d’apprendre de nouvelles choses, j’adore produire et participer à divers projet.</p>
     </div>
   
-    <div class="bg-blue grid grid-cols-2 lg:grid-cols-6 gap-5 auto-rows-min content-center lg:w-5/12 lg:ml-12">
-      <div class="box lg:col-span-2">
-        <div class="icon">
-          <img src="/images/Figma.svg" alt="Vect1" />
-        </div>
-        <div class="software">Figma</div>
-      </div>
+    <div class="bg-blue grid grid-cols-2 lg:grid-cols-6 lg:gap-4 md:gap-3 gap-2 auto-rows-min content-center lg:w-5/12 lg:ml-12">
       <div class="box lg:col-span-2">
         <div class="icon">
           <img src="/images/React.svg" alt="React" />
@@ -23,22 +28,28 @@
         <div class="software">React</div>
       </div>
       <div class="box lg:col-span-2">
-        <div class="icon">
-          <img src="/images/html.svg" alt="Vect1" />
+        <div class="icon w-12">
+          <img src="/images/NodeJs.svg" alt="NodeJs" />
         </div>
-        <div class="software">HTML / CSS</div>
+        <div class="software">Node.js</div>
+      </div>
+      <div class="box lg:col-span-2">
+        <div class="icon">
+          <img src="/images/Figma.svg" alt="Figma" />
+        </div>
+        <div class="software">Figma</div>
       </div>
       <div class="box lg:col-span-3">
         <div class="icon">
-          <img src="/images/Photoshop.svg" alt="Vect1" />
+          <img src="/images/Javascript.svg" width="30" height="30" alt="Javascript" />
         </div>
-        <div class="software">Photoshop</div>
+        <div class="software js">Javascript</div>
       </div>
       <div class="box col-span-2 lg:col-span-3">
         <div class="icon">
-          <img src="/images/Javascript.svg" alt="Vect1" />
+          <img width="30" height="30" src="/images/Typescript.svg" alt="Typescript" />
         </div>
-        <div class="software">Javascript</div>
+        <div class="software">Typescript</div>
       </div>
     </div>         
 </section>
@@ -51,8 +62,10 @@
     
     @apply rounded px-1 py-3 flex justify-center; 
 }
-.box > *{
+.box > * {
     z-index: 8;
+    min-height: 35px;
+    max-height: 40px;
     @apply px-2 flex items-center;
 }
 #skill {

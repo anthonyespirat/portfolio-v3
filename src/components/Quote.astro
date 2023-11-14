@@ -1,6 +1,32 @@
 ---
-
+import Modal from "@components/Modal.astro";
 ---
 <div id='quote' class='my-2'>
-  <p class='font-bold text-5xl text-center'>NEED TO BE <span class='text-primary'>CHANGE</span></p>
+  <p onclick={`window.cat.showModal()`} class='cat font-bold text-5xl text-center cursor-pointer p-6'>&#x1F63C;</p>
+  <dialog class="bg-dark rounded no-scrollbar overflow-auto backdrop:bg-gray-900 duration-200 backdrop:opacity-80 outline-none" id={"cat"} onclick={`window.cat.close()`}>
+    <img class="w-full" src="/images/cat.jpg" alt="cat" />
+  </dialog>
 </div>
+
+<style>
+  .cat {
+    opacity: 0.9;
+    animation: cat 1s infinite;
+  }
+
+  @keyframes cat {
+    0% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(7deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+
+  .cat:hover {
+    opacity: 1;
+  }
+</style>

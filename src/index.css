@@ -16,3 +16,20 @@
     }
   }
 }
+
+dialog {
+  color: white;
+  border: none;
+}
+dialog[open] {
+  animation: fade 0.4s ease normal;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
