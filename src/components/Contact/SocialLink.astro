@@ -1,4 +1,8 @@
 ---
+interface Props {
+  link: string;
+}
+
 const { link } = Astro.props;
 ---
 <a class='social--link' target='_blank' rel='noreferrer' href={link}>

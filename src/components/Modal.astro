@@ -1,8 +1,13 @@
 ---
-import { PostFrontmatter } from "@pages/index.astro";
-import { MarkdownInstance } from "astro";
+import type { PostFrontmatter } from "@pages/index.astro";
+import type { MarkdownInstance } from "astro";
 
-const { id, post }: { id: string, post: MarkdownInstance<PostFrontmatter> } = Astro.props;
+interface Props {
+  id: string;
+  post: MarkdownInstance<PostFrontmatter>;
+}
+
+const { id, post } = Astro.props;
 ---
 
 <div id='trigger' class="w-full" onclick={`window.${id}.showModal()`}><slot name='element' /></div>

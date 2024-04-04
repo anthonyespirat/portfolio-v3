@@ -1,9 +1,13 @@
 ---
 import Modal from "@components/Modal.astro";
-import { PostFrontmatter } from "@pages/index.astro";
-import { MarkdownInstance } from "astro";
+import type { PostFrontmatter } from "@pages/index.astro";
+import type { MarkdownInstance } from "astro";
 
-const { post }: { post: MarkdownInstance<PostFrontmatter> } = Astro.props;
+interface Props {
+  post: MarkdownInstance<PostFrontmatter>;
+}
+
+const { post } = Astro.props;
 const { id } = post.frontmatter;
 ---
 <div class="flex rounded overflow-hidden max-h-[300px] w-full">

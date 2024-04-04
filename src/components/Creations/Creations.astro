@@ -1,5 +1,5 @@
 ---
-import { PostFrontmatter } from "@pages/index.astro";
+import type { PostFrontmatter } from "@pages/index.astro";
 import Creation from "./Creation.astro";
 
 const posts = await Astro.glob<PostFrontmatter>("../../creations/*.md");
