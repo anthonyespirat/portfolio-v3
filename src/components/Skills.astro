@@ -1,26 +1,24 @@
 ---
-
 ---
 <script>
   const js = document.querySelector<HTMLDivElement>(".js")
-
-
-  // on resize window change js text to "JS"
-  window.addEventListener("resize", () => {
-    js.innerText = window.innerWidth < 500 ? "JS" : "Javascript"
-  })
-
+    
+    
+    // on resize window change js text to "JS"
+    window.addEventListener("resize", () => {
+      js.innerText = window.innerWidth < 500 ? "JS" : "Javascript"
+    })
 </script>
-
-<section id='skill' class='flex flex-col lg:flex-row items-center lg:text-left mb-12'>
-    <div class='lg:w-6/12 skill-text mb-12 lg:mb-0 flex-col flex gap-2'>
+    
+    <section id='skill' class='flex flex-col lg:flex-row items-center lg:text-left mb-12'>
+      <div class='lg:w-6/12 skill-text mb-12 lg:mb-0 flex-col flex gap-2'>
       <h2 class="text-4xl font-medium">
         <span class="text-primary">M</span>es compétences et ma passion web
       </h2>
       <p class='lg:w-4/5 text-gray-400 text-xl leading-9'>Soif d’apprendre de nouvelles choses, j’adore produire et participer à divers projet.</p>
     </div>
   
-    <div class="bg-blue grid grid-cols-2 lg:grid-cols-6 lg:gap-4 md:gap-3 gap-2 auto-rows-min content-center lg:w-5/12 lg:ml-12">
+    <div class="bg-blue grid grid-cols-2 lg:grid-cols-6 lg:gap-4 md:gap-3 gap-2 auto-rows-min container lg:max-w-none content-center lg:w-6/12 lg:ml-6">
       <div class="box lg:col-span-2">
         <div class="icon">
           <img src="/images/React.svg" alt="React" />
@@ -66,7 +64,7 @@
     z-index: 8;
     min-height: 35px;
     max-height: 40px;
-    @apply px-2 flex items-center;
+    @apply px-1 flex items-center;
 }
 #skill {
     position: relative;

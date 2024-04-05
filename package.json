@@ -19,8 +19,8 @@
   "devDependencies": {
     "@astrojs/react": "^3.1.1",
     "@types/react": "^18.0.21",
-    "@typescript-eslint/eslint-plugin": "^5.40.0",
-    "@typescript-eslint/parser": "^5.40.0",
+    "@typescript-eslint/eslint-plugin": "^7.5.0",
+    "@typescript-eslint/parser": "^7.5.0",
     "astro-eslint-parser": "^0.7.2",
     "eslint": "^8.25.0",
     "eslint-config-prettier": "^8.5.0",
