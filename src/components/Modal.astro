@@ -18,7 +18,13 @@ const { id, post } = Astro.props;
     <article class="py-2 mt-4 w-full tracking-wide text-center flex flex-col gap-4 lg:gap-5">
       <!-- TITLE -->
       <h2 class="font-medium text-lg">{post.frontmatter.title}</h2>
-      <a href={post.frontmatter.link} class="self-center p-2 outline-none border border-primary rounded" target="_blank">Voir le site</a>
+      {
+        post.frontmatter.link ? (
+        <a href={post.frontmatter.link} class="self-center p-2 outline-none border border-primary rounded" target="_blank">Voir le site</a>
+        ) : (
+        <span class="self-center p-2 outline-none border border-primary rounded">Site indisponible</span>
+        )
+      }
       <!-- STACK -->
       <div class="flex gap-x-2 justify-center font-light">
         {post.frontmatter.stack.join(" - ")}
