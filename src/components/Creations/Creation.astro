@@ -10,7 +10,7 @@ interface Props {
 const { post } = Astro.props;
 const { id } = post.frontmatter;
 ---
-<div class="flex rounded overflow-hidden max-h-[300px] w-full">
+<div class="flex rounded overflow-hidden max-h-[300px] min-h-[300px] w-full">
   <Modal id={id} post={post}>
     <img slot="element" src={post.frontmatter.miniature} alt='' class="block w-full object-cover object-top hover:scale-105 transition-all cursor-pointer h-full">
   </Modal>

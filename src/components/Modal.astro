@@ -10,15 +10,17 @@ interface Props {
 const { id, post } = Astro.props;
 ---
 
+<modal-greet data-id={id} class="flex">
 <div id='trigger' class="w-full" onclick={`window.${id}.showModal()`}><slot name='element' /></div>
-<dialog id={`${id}`} class='bg-dark rounded no-scrollbar overflow-auto backdrop:bg-gray-900 duration-200 backdrop:opacity-80 outline-none' onclick={`window.${id}.close()`}>
-  <form method="dialog" class="flex flex-col items-center w-full">
+<dialog id={`${id}`} class='bg-dark rounded no-scrollbar overflow-auto backdrop:bg-gray-900 duration-200 backdrop:opacity-80 outline-none'>
+  <form method="dialog" class="flex flex-col items-center w-full p-4 border-2 border-primary rounded">
     <img src={post.frontmatter.miniature} class="rounded max-h-[500px] md:max-h-[700px]"/>
-    <article class="py-2 mt-4 w-full tracking-wide text-center">
+    <article class="py-2 mt-4 w-full tracking-wide text-center flex flex-col gap-4 lg:gap-5">
       <!-- TITLE -->
       <h2 class="font-medium text-lg">{post.frontmatter.title}</h2>
+      <a href={post.frontmatter.link} class="self-center p-2 outline-none border border-primary rounded" target="_blank">Voir le site</a>
       <!-- STACK -->
-      <div class="flex gap-x-2 justify-center my-4 font-light">
+      <div class="flex gap-x-2 justify-center font-light">
         {post.frontmatter.stack.join(" - ")}
       </div>
       <!-- CONTENT -->
@@ -26,6 +28,28 @@ const { id, post } = Astro.props;
     </article>
   </form>
 </dialog>
+</modal-greet>
+
+
+
+<script>
+  class ModalGreet extends HTMLElement {
+  constructor() {
+    super();
+
+    // Read the message from the data attribute.
+    const id = this.dataset.id;
+    const dialog = document.getElementById(id) as HTMLDialogElement;
+
+    // Show the dialog when the element is clicked.
+    dialog.addEventListener('click', (e) => {
+      e.stopPropagation();
+      dialog.close();
+    });
+  }
+}
+customElements.define('modal-greet', ModalGreet);
+</script>
 
 <style>
 

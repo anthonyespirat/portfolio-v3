@@ -25,15 +25,6 @@ const { title } = Astro.props;
       <Header />
       <slot />
     </div>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const modal = document.getElementById("modal") as HTMLDialogElement;
-        const trigger = document.getElementById("trigger");
-        trigger.addEventListener("click", () => {
-          modal.showModal();
-        });
-      });
-    </script>
   </body>
 </html>
 
