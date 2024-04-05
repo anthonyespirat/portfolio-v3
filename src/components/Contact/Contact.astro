@@ -4,7 +4,7 @@ import SocialLink from "./SocialLink.astro";
 ---
 <div id='contact' class='pb-12 mt-12 mb-6'>
   <h2 class='font-semibold text-4xl tracking-wider text-center py-12'><span class='text-primary'>C</span>ontact</h2>
-  <div class='socials flex justify-around w-full lg:w-1/2 lg:mx-auto'>
+  <div class='socials container mx-auto flex flex-col items-center gap-4 min-[420px]:flex-row justify-around w-full lg:w-1/2 lg:mx-auto'>
     <SocialLink link='http://instagram.com/poupipiou'>
       <div class="social">
         <img src="/images/Insta.svg" alt="" />
@@ -33,8 +33,8 @@ import SocialLink from "./SocialLink.astro";
     border-radius: 100%;
     background: linear-gradient(221.44deg, rgba(86, 136, 199, 0.09) -7.05%, rgba(172, 196, 226, 0.087) 100%);
     border: 1px solid rgba(224, 224, 224, 0.2);
-    height: 100px;
-    width: 100px;
+    height: 80px;
+    width: 80px;
     flex-basis: 100px;
     @apply p-6 flex items-center justify-around;
     @apply hover:bg-gray-400 hover:bg-opacity-10 transition duration-500
